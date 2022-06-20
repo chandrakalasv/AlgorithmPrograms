@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class BinarySearch {
     public static void main(String[] args) {
         Scanner string = new Scanner(System.in);
-        String sentence = "java, binary, search";
+        String sentence = "java,binary,search";
         String[] arrayOfString = sentence.toLowerCase().split(",");
 
         BinarySearch binary = new BinarySearch();
 
         for(int i = 0; i < arrayOfString.length - 1; i++)
         {
-            for (int j = i+1; j < arrayOfString.length; j++)
+            for (int j = i + 1; j < arrayOfString.length; j++)
             {
                 if(arrayOfString[i].compareTo(arrayOfString[j]) > 0)
                 {
@@ -26,7 +26,6 @@ public class BinarySearch {
         String word = string.next();
         binary.binarySearch(arrayOfString, 0, arrayOfString.length, word);
     }
-
     public void binarySearch(String[] array, int low, int high, String data) {
 
         int mid = (low + high) / 2;
@@ -36,7 +35,7 @@ public class BinarySearch {
             return;
         }
 
-        if (mid == low || mid == high) {
+        if (mid == low) {
             System.out.println(data + " word cant found  ");
             return;
         }

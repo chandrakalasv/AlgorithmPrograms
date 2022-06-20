@@ -7,13 +7,12 @@ public class InsertionSort {
         String array[] = {"hi","guyz", "hello","welcome", "to", "game"};
 
         insertion.insertionSort(array);
-        for(int i =0;i<array.length;i++) {
+        for(int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
     }
 
     public void insertionSort(String [] array) {
-
         for (int i = 0; i < array.length; i++) {
             String temp = array[i];
             int index = i - 1;

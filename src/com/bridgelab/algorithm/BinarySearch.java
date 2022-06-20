@@ -2,13 +2,13 @@ package com.bridgelab.algorithm;
 
 import java.util.Scanner;
 
-public class BinarySearch {
+public class BinarySearch<K extends Comparable<K>>{
     public static void main(String[] args) {
         Scanner string = new Scanner(System.in);
         String sentence = "java,binary,search";
         String[] arrayOfString = sentence.toLowerCase().split(",");
 
-        BinarySearch binary = new BinarySearch();
+        BinarySearch<String> binary = new BinarySearch<>();
 
         for(int i = 0; i < arrayOfString.length - 1; i++)
         {
@@ -26,23 +26,24 @@ public class BinarySearch {
         String word = string.next();
         binary.binarySearch(arrayOfString, 0, arrayOfString.length, word);
     }
-    public void binarySearch(String[] array, int low, int high, String data) {
+    public<K extends Comparable<K>> K binarySearch(K[] array, int low, int high, K data) {
 
         int mid = (low + high) / 2;
 
         if (data.equals(array[mid])) {
             System.out.println(data + " word is found ");
-            return;
+            return data;
         }
 
         if (mid == low) {
             System.out.println(data + " word cant found  ");
-            return;
+            return data;
         }
 
         else if (data.compareTo(array[mid]) > 0)
             binarySearch(array, mid, high, data);
         else
             binarySearch(array, low, mid, data);
+            return data;
     }
 }
